@@ -11,12 +11,16 @@ PackageName: Cwdio File Manager
 PackageUrl: https://cwdio.com/
 License: Proprietary
 Copyright: Copyright (c) Cwdio
-ShortDescription: Keyboard-first dual-pane file manager with a terminal that follows the panel.
+ShortDescription: Dual-pane file manager with a built-in terminal that follows the folder you're in.
 Description: |-
-  cwdio is a keyboard-first, dual-pane file manager for Windows and Linux. Its embedded terminal follows
-  the active panel, and typing cd moves the panel back, including over SSH. Transfers run through a
-  journaled queue that survives a restart or a dropped drive, and delete goes to the OS trash by default.
-  On Windows it also shares the OS file clipboard, so Ctrl+C here pastes in Explorer.
+  A keyboard-driven, two-panel file manager. The built-in terminal stays in the folder you're looking at,
+  and if you cd somewhere in the terminal, the panel follows. Works over SSH too.
+
+  Copies and moves run in a queue in the background and pick up where they left off if the app is closed.
+  Deletes go to the Recycle Bin. You can copy files in cwdio and paste them in Explorer, or the other way
+  round.
+
+  Free during the beta. No account needed.
 Moniker: cwdio
 Tags:
 - developer-tools
