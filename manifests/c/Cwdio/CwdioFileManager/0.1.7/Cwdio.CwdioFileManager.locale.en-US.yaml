@@ -11,13 +11,12 @@ PackageName: Cwdio File Manager
 PackageUrl: https://cwdio.com/
 License: Proprietary
 Copyright: Copyright (c) Cwdio
-ShortDescription: A keyboard-first, dual-pane professional file manager with embedded terminals, an operation queue, and a plugin platform.
+ShortDescription: Keyboard-first dual-pane file manager with a terminal that follows the panel.
 Description: |-
-  Cwdio File Manager is a keyboard-first, dual-pane file manager for Windows. It pairs an orthodox
-  two-pane workflow with embedded multi-session terminals (cwd-synced), a cancelable/resumable operation
-  queue, archive browse + write (ZIP/RAR/7z/tar), remote filesystems (SFTP/FTP/FTPS), rich previews
-  (PDF/media/code/hex), bulk rename, duplicate finding, and a plugin platform. Every feature is free —
-  there is no paid tier, no account and no telemetry.
+  cwdio is a keyboard-first, dual-pane file manager for Windows and Linux. Its embedded terminal follows
+  the active panel, and typing cd moves the panel back, including over SSH. Transfers run through a
+  journaled queue that survives a restart or a dropped drive, and delete goes to the OS trash by default.
+  On Windows it also shares the OS file clipboard, so Ctrl+C here pastes in Explorer.
 Moniker: cwdio
 Tags:
 - developer-tools
@@ -25,41 +24,6 @@ Tags:
 - file-manager
 - productivity
 - terminal
-ReleaseNotes: |-
-  cwdio runs on Linux
-  There is a .deb and an .rpm on the download page. sudo apt install ./cwdio-amd64.deb
-  or sudo dnf install ./cwdio-x86_64.rpm, x86-64.
-  It is the same application, not a reduced one. Two panels and the orthodox keys, the terminal that follows
-  the active panel and moves it back when you type cd — including over SSH — the journaled transfer queue
-  that survives a restart and resumes after a drive drops out, SFTP and FTP as ordinary panels, archives
-  browsable in place, git status in the list, bulk rename, the duplicate finder, the size map, checksums, and
-  Quick Look with the built-in editor on F4.
-  What is not there, and will not pretend to be. Four things on Windows have no Linux counterpart, so on
-  Linux they are simply absent rather than present-and-failing: Everything search (a Windows indexer), the
-  Explorer context menu, the shared OS file clipboard that lets Ctrl+C here paste in Explorer, and WSL
-  integration. Deleting still goes to your desktop's trash, because that part is portable.
-  There is no auto-update on Linux yet. Help ▸ Check for updates tells you when a new version exists
-  and links to it; installing it is still apt/dnf by hand. The proper answer is a signed apt/yum
-  repository, which would deliver updates through the package manager you already use — worth building once
-  there are Linux users to deliver them to.
-  Why the packages are not signed, since it is the sort of thing worth asking. Linux has no equivalent of
-  Authenticode or Gatekeeper: dpkg does not verify .deb signatures by default, and what apt does verify
-  is repository metadata rather than individual files. Signing the file you download would therefore be
-  checked by nothing. Every release publishes SHA256SUMS.txt if you would like to verify it yourself, and
-  that file now covers the Linux packages too.
-  Fixed
-  - A folder you cannot read offers to fix that again. Under a locked-down workspace root
-    (CWDIO_SANDBOX_ROOT), entering a folder you have no permission to list could report it as being
-    outside the sandbox instead of offering the "get access" prompt — so the one route out of an unreadable
-    folder never appeared for the folders that need it. The cause was a path that cannot be resolved, on a
-    root reached by an alias such as a Windows 8.3 short name.
-  - The macOS build carries the real application icon rather than Electron's, and is now built for Intel
-    as well as Apple Silicon. macOS is still not released — it needs notarization first — but the build is no
-    longer wrong.
-  - The Windows portable zip installs its command properly through winget, and the release pipeline no
-    longer reports a missing asset that was in fact published.
-  Read this on the site: https://cwdio.com/changelog/
-  Full Changelog: v0.1.6...v0.1.7
 ReleaseNotesUrl: https://github.com/cwdio/cwdio/releases/tag/v0.1.7
 ManifestType: defaultLocale
 ManifestVersion: 1.12.0
